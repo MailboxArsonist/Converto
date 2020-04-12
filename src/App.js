@@ -1,12 +1,19 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import Button from '@material-ui/core/Button';
+import React from "react";
+import {
+  BrowserRouter as Router,
+  // Switch,
+  // Route,
+  // Link
+} from 'react-router-dom';
+
+import Navbar from './components/Nav/Navbar';
 
 function App() {
   return (
-    <Button variant="contained" color="primary">
-      Hello World
-    </Button>
+    <Router>
+      <Navbar />
+    </Router>
+
   );
 }
 
