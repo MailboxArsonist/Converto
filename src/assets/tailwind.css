@@ -5,6 +5,8 @@
 
 @tailwind utilities;
 
-a {
-    color: red;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600;800&display=swap');
+
+body {
+    font-family: 'Poppins', sans-serif;
 }
