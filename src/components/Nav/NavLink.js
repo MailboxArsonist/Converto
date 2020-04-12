@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 const NavLink = (props) => {
   const { href, text } = props;
   return (
-    <Link to={href} className="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4">{text}</Link>
+    <Link to={href} className="block mt-4 lg:inline-block lg:mt-0 text-purple-600 hover:text-purple-900 text-base mr-4">{text}</Link>
   );
 };
 
