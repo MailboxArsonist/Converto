@@ -13,7 +13,7 @@ function App() {
     <Router>
       {/* Navbar */}
       <Navbar />
-      <main className="container mx-auto mt-12">
+      <main className="container mx-auto my-12">
         <Switch>
           <Route path="/url-encoder">
             <UrlEncoder />
