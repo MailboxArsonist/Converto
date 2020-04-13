@@ -3,6 +3,7 @@ import Navlink from "./NavLink";
 
 const Navbar = () => {
 
+  // Define menu open boolean
   const [open, setOpen] = useState(false);
 
   const links = [
@@ -11,6 +12,7 @@ const Navbar = () => {
     { href: "/test", text: "test" },
   ];
   const LinkItems = links.map(link => <Navlink key={link.text} href={link.href} text={link.text} /> );
+
   return (
     <nav className="flex items-center justify-between flex-wrap bg-white p-8 shadow border-gray-500">
       <div className="flex items-center flex-shrink-0 text-purple-900 mr-6">
