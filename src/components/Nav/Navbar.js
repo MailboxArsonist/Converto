@@ -26,7 +26,7 @@ const Navbar = () => {
           }
         </button>
       </div>
-      <div className={`w-full flex-grow flex flex-col lg:flex-row lg:items-center lg:justify-end lg:w-auto ${open === true ? "block" : "hidden"}`}>
+      <div className={`w-full flex-grow flex-col lg:flex-row lg:items-center lg:justify-end lg:w-auto ${open === true ? "flex" : "hidden lg:flex"}`}>
         { LinkItems }
       </div>
     </nav>
