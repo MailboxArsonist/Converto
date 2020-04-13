@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 const ColorConvertor = () => {
-  const [selectedColor, setSelectedColor] = useState("#fff");
+  const [selectedColor, setSelectedColor] = useState("#da4d69");
 
   function setColorsFromHex(hex) {
     setSelectedColor(hex);
