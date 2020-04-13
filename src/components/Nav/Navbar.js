@@ -7,7 +7,7 @@ const Navbar = () => {
   const [open, setOpen] = useState(false);
 
   const links = [
-    { href: "/", text: "Home" },
+    { href: "/color-convertor", text: "Color Convertor" },
     { href: "/url-encoder", text: "URL encoder" },
     { href: "/url-decoder", text: "URL decoder" },
   ];
