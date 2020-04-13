@@ -9,7 +9,7 @@ const Navbar = () => {
   const links = [
     { href: "/", text: "Home" },
     { href: "/url-encoder", text: "URL encoder" },
-    { href: "/test", text: "test" },
+    { href: "/url-decoder", text: "URL decoder" },
   ];
   const LinkItems = links.map(link => <Navlink key={link.text} href={link.href} text={link.text} /> );
 

@@ -7,6 +7,7 @@ import {
 
 import Navbar from "./components/Nav/Navbar";
 import UrlEncoder from "./components/convertors/UrlEncoder";
+import UrlDecoder from "./components/convertors/UrlDecoder";
 
 function App() {
   return (
@@ -17,6 +18,9 @@ function App() {
         <Switch>
           <Route path="/url-encoder">
             <UrlEncoder />
+          </Route>
+          <Route path="/url-decoder">
+            <UrlDecoder />
           </Route>
         </Switch>
       </main>
