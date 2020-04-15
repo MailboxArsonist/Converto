@@ -4,13 +4,33 @@ const ColorConvertor = () => {
   const [selectedHex, setSelectedHex] = useState("#da4d69");
   const [selectedRgb, setSelectedRGB] = useState("#da4d69");
 
+  function isValidColor(color) {
+    const el = document.createElement('div');
+    el.style.backgroundColor = color;
+    return el.style.backgroundColor ? true : false;
+  }
+
+  function validateHex(hex) {
+    return /^#([0-9A-F]{3}){1,2}$/i.test(hex);
+  }
+
   function HexToRGB(hex) {
-    const slicedHex = hex.replace('#','');
-    const r = parseInt(slicedHex.substring(0,2), 16);
-    const g = parseInt(slicedHex.substring(2,4), 16);
-    const b = parseInt(slicedHex.substring(4,6), 16);
-    const result = 'rgb(' + r + ',' + g + ',' + b + ')';
-    return result;
+    let r = 0, g = 0, b = 0;
+
+    // 3 digits
+    if (hex.length == 4) {
+      r = "0x" + hex[1] + hex[1];
+      g = "0x" + hex[2] + hex[2];
+      b = "0x" + hex[3] + hex[3];
+
+    // 6 digits
+    } else if (hex.length == 7) {
+      r = "0x" + hex[1] + hex[2];
+      g = "0x" + hex[3] + hex[4];
+      b = "0x" + hex[5] + hex[6];
+    }
+  
+    return "rgb("+ +r + "," + +g + "," + +b + ")";
   }
 
   function componentToHex(c) {
@@ -32,14 +52,23 @@ const ColorConvertor = () => {
   }
 
   function setColorsFromHex(hex) {
+    setSelectedHex(hex);
+
+    // Don't set rgb values if hex isn't valid
+    if(!validateHex(hex)) return;
+
     const rgb = HexToRGB(hex);
     setSelectedRGB(rgb);
-    setSelectedHex(hex);
   }
+
   function setColorsFromRGB(rgb) {
+    setSelectedRGB(rgb);
+
+    // Don't set hex values if rgb isn't valid
+    if(!isValidColor(rgb)) return;
+
     const hex = RGBToHex(rgb);
     setSelectedHex(hex);
-    setSelectedRGB(rgb);
   }
 
   
