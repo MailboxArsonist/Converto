@@ -9,6 +9,7 @@ import Navbar from "./components/Nav/Navbar";
 import UrlEncoder from "./components/convertors/UrlEncoder";
 import UrlDecoder from "./components/convertors/UrlDecoder";
 import ColorConvertor from "./components/convertors/ColorConvertor";
+import ColorPicker from "./components/convertors/ColorPicker";
 
 function App() {
   return (
@@ -25,6 +26,9 @@ function App() {
           </Route>
           <Route path="/color-convertor">
             <ColorConvertor />
+          </Route>
+          <Route path="/color-picker">
+            <ColorPicker />
           </Route>
         </Switch>
       </main>
