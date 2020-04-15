@@ -14,25 +14,20 @@ const ColorConvertor = () => {
   }
 
   function componentToHex(c) {
-    var hex = c.toString(16);
+    let hex;
+    if(typeof c === 'string') {
+      hex = parseInt(c)
+    }
+    hex = hex.toString(16);
     return hex.length == 1 ? "0" + hex : hex;
   }
 
   function RGBToHex(rgb) {
-    console.log(rgb);
     let cut = rgb.split("(")[1].split(")")[0];
     cut = cut.split(",");
-    let r = cut[0].toString(16);
-    let g = cut[1].toString(16);
-    let b = cut[2].toString(16);
-  
-    if (r.length == 1)
-      r = "0" + r;
-    if (g.length == 1)
-      g = "0" + g;
-    if (b.length == 1)
-      b = "0" + b;
-  
+    let r = componentToHex(cut[0]);
+    let g = componentToHex(cut[1]);
+    let b = componentToHex(cut[2]);
     return "#" + r + g + b;
   }
 
