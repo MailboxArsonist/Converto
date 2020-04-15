@@ -1,6 +1,21 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 const ColorPicker = () => {
+
+  const [img, setImg] = useState();
+
+  function uploadImage(e){
+    e.preventDefault();
+
+    let reader = new FileReader();
+    let file = e.target.files[0];
+
+    reader.onloadend = () => {
+      setImg(reader.result);
+    }
+
+    reader.readAsDataURL(file)
+  }
   
   return (
     <>
@@ -10,8 +25,10 @@ const ColorPicker = () => {
 
       <div className="flex mx-auto flex-col justify-center items-center">
 
+        <img src={img} className="max-w-md w-full mb-10" />
+
         <label className="block w-5/6 md:w-1/2 text-center border rounded block mx-auto text-white px-2 py-3 bg-purple-700 hover:bg-purple-800 cursor-pointer" htmlFor="image-upload">
-          Upload an image <input className="hidden" type="file" id="image-upload" />
+          Upload an image <input className="hidden" type="file" id="image-upload" onChange={ e => uploadImage(e) } />
         </label>
 
       </div>
