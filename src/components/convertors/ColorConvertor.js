@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 
 const ColorConvertor = () => {
-  const [selectedHex, setSelectedHex] = useState("#da4d69");
-  const [selectedRgb, setSelectedRGB] = useState("#da4d69");
+  const [selectedHex, setSelectedHex] = useState("#9db2e8");
+  const [selectedRgb, setSelectedRGB] = useState("rgb(157,178,232)");
 
   function isValidColor(color) {
     const el = document.createElement('div');
