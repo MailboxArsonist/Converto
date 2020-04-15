@@ -10,7 +10,10 @@ const ColorPicker = () => {
 
       <div className="flex mx-auto flex-col justify-center items-center">
 
-          <input type="image" />
+        <label className="block w-5/6 md:w-1/2 text-center border rounded block mx-auto text-white px-2 py-3 bg-purple-700 hover:bg-purple-800 cursor-pointer" htmlFor="image-upload">
+          Upload an image <input className="hidden" type="file" id="image-upload" />
+        </label>
+
       </div>
 
     </>
