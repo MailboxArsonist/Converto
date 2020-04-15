@@ -8,6 +8,7 @@ const Navbar = () => {
 
   const links = [
     { href: "/color-convertor", text: "Color Convertor" },
+    { href: "/color-picker", text: "Image Eyedropper" },
     { href: "/url-encoder", text: "URL encoder" },
     { href: "/url-decoder", text: "URL decoder" },
   ];

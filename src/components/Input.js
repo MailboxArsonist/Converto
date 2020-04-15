@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+//E.G. <Input id="text" className="border rounded shadow p-2 ml-3" type="text" value={color} readonly={true} handleInput={ e => changeColor(e.target.value) } />
 const Input = (props) => {
   return (
     <input 
