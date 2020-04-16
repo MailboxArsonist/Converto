@@ -27,7 +27,11 @@ const ColorPicker = () => {
 
       <div className="flex mx-auto flex-col justify-center items-center">
 
-        <img src={img} className="max-w-md w-full mb-10" />
+      <canvas className="hidden" />
+
+        <img src={img} className="max-w-md w-full mb-10 cursor-crosshair" onMouseMove={e => {
+          console.log(e);
+        }} />
 
         <div className="flex items-center mb-6">
           <div style={{ backgroundColor: color }} className="w-16 h-16 block rounded-lg border-4 border-black"></div>
