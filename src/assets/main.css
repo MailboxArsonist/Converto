@@ -3380,6 +3380,10 @@ video {
   cursor: not-allowed;
 }
 
+.cursor-crosshair {
+  cursor: crosshair;
+}
+
 .block {
   display: block;
 }
@@ -13693,6 +13697,10 @@ body {
     cursor: not-allowed;
   }
 
+  .sm\:cursor-crosshair {
+    cursor: crosshair;
+  }
+
   .sm\:block {
     display: block;
   }
@@ -23999,6 +24007,10 @@ body {
 
   .md\:cursor-not-allowed {
     cursor: not-allowed;
+  }
+
+  .md\:cursor-crosshair {
+    cursor: crosshair;
   }
 
   .md\:block {
@@ -34309,6 +34321,10 @@ body {
     cursor: not-allowed;
   }
 
+  .lg\:cursor-crosshair {
+    cursor: crosshair;
+  }
+
   .lg\:block {
     display: block;
   }
@@ -44615,6 +44631,10 @@ body {
 
   .xl\:cursor-not-allowed {
     cursor: not-allowed;
+  }
+
+  .xl\:cursor-crosshair {
+    cursor: crosshair;
   }
 
   .xl\:block {
