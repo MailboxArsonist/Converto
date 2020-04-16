@@ -1,6 +1,10 @@
 module.exports = {
   theme: {
-    extend: {},
+    extend: {
+      cursor: {
+        crosshair: 'crosshair',
+      }
+    },
   },
   variants: {},
   plugins: [],
