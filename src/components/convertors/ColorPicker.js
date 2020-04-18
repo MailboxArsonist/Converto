@@ -76,7 +76,7 @@ const ColorPicker = () => {
     <>
       <h1 className="text-3xl text-center mb-10">Image Eyedropper</h1>
 
-      <p className="text-center mb-6">Upload an image and then hover on the image to preview a color. Click to select the color.</p>
+      <p className="text-center mb-6">Upload an image and then click on an area to preview a color.</p>
 
       <div className="flex mx-auto flex-col justify-center items-center">
 
