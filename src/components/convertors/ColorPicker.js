@@ -5,12 +5,9 @@ const ColorPicker = () => {
 
   const [color, changeColor] = useState("#fefefe");
   const [img, setImg] = useState();
-  const [eyeDropperOpen, setEyeDropperOpen] = useState(true);
   const canvasRef = React.createRef();
 
   function uploadImage(e){
-    e.preventDefault();
-
     let reader = new FileReader();
     let file = e.target.files[0];
 
@@ -24,26 +21,22 @@ const ColorPicker = () => {
   /**
    * Inits eye dropper
    */
-  async function handleMouseMove(e) {
-    console.log(e);
-    console.log(canvasRef.current);
+  function handleEyeDropper(syntheticEvent) {
+
+    // Persist synthtic event so values are not nullified
+    syntheticEvent.persist();
+    const e = syntheticEvent.nativeEvent;
     const x = e.offsetX;
     const y = e.offsetY;
 
     // Draw canvas for image
     handleCanvas(canvasRef.current, e.target).then((el) => {
       //get image data
-      console.log(el.getContext('2d'))
       const p = el.getContext('2d').getImageData(x, y, 1, 1).data;
       const hex = rgbToHex(p[0],p[1],p[2]);
           
       // Set color value
       changeColor(hex)
-  
-      if(e.type === "click") {
-        // Set eye dropper open to false, will remove mouseover function
-        setEyeDropperOpen(false)
-      }
     })
   }
 
@@ -89,7 +82,7 @@ const ColorPicker = () => {
 
       <canvas ref={canvasRef} className="hidden" />
 
-        <img src={img} className="max-w-md w-full mb-10 cursor-crosshair" onMouseMove={e => handleMouseMove(e)} onClick={e => handleMouseMove(e)} />
+        <img src={img} className="max-w-md w-full mb-10 cursor-crosshair" onClick={e => handleEyeDropper(e)} />
 
         <div className="flex items-center mb-6">
           <div style={{ backgroundColor: color }} className="w-16 h-16 block rounded-lg border-4 border-black"></div>
