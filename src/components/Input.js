@@ -1,17 +1,27 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React from "react";
+import PropTypes from "prop-types";
 
-//E.G. <Input id="text" className="border rounded shadow p-2 ml-3" type="text" value={color} readonly={true} handleInput={ e => changeColor(e.target.value) } />
+
 const Input = (props) => {
+  const {
+    id,
+    value,
+    type,
+    className,
+    handleInput,
+    placeholder,
+    readonly,
+  } = props;
+
   return (
-    <input 
-      id={props.id}
-      value={props.value}
-      type={props.type}
-      className={props.className}
-      onChange={ e => props.handleInput(e) }
-      placeholder={props.placeholder}
-      readOnly={props.readonly}
+    <input
+      id={id}
+      value={value}
+      type={type}
+      className={className}
+      onChange={(e) => handleInput(e)}
+      placeholder={placeholder}
+      readOnly={readonly}
     />
   );
 };
@@ -23,10 +33,10 @@ Input.propTypes = {
   className: PropTypes.string,
   value: PropTypes.oneOfType([
     PropTypes.string,
-    PropTypes.number
+    PropTypes.number,
   ]),
   handleInput: PropTypes.func,
-  readonly: PropTypes.bool
+  readonly: PropTypes.bool,
 
 };
 
@@ -37,7 +47,7 @@ Input.defaultProps = {
   className: "",
   value: "",
   handleInput: () => false,
-  readonly: false
+  readonly: false,
 };
 
 export default Input;
