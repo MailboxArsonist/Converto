@@ -10,6 +10,7 @@ const Navbar = () => {
     { href: "/color-picker", text: "Image Eyedropper" },
     { href: "/url-encoder", text: "URL encoder" },
     { href: "/url-decoder", text: "URL decoder" },
+    { href: "/img-to-base64", text: "IMG to base64" },
   ];
   const LinkItems = links.map((link) => <Navlink key={link.text} href={link.href} text={link.text} />);
 
