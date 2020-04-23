@@ -1,7 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-
 const Input = (props) => {
   const {
     id,
@@ -11,11 +10,13 @@ const Input = (props) => {
     handleInput,
     placeholder,
     readonly,
+    refProp,
   } = props;
 
   return (
     <input
       id={id}
+      ref={refProp}
       value={value}
       type={type}
       className={className}
@@ -37,6 +38,11 @@ Input.propTypes = {
   ]),
   handleInput: PropTypes.func,
   readonly: PropTypes.bool,
+  refProp: PropTypes.oneOfType([
+    PropTypes.func,
+    PropTypes.object,
+    PropTypes.shape({ current: PropTypes.elementType }),
+  ]),
 
 };
 
@@ -48,6 +54,7 @@ Input.defaultProps = {
   value: "",
   handleInput: () => false,
   readonly: false,
+  refProp: null,
 };
 
 export default Input;
