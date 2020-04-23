@@ -10,6 +10,7 @@ import UrlEncoder from "./components/convertors/UrlEncoder";
 import UrlDecoder from "./components/convertors/UrlDecoder";
 import ColorConvertor from "./components/convertors/ColorConvertor";
 import ColorPicker from "./components/convertors/ColorPicker";
+import ImgBase64Encoder from "./components/convertors/ImgBase64Encoder";
 
 function App() {
   return (
@@ -29,6 +30,9 @@ function App() {
           </Route>
           <Route path="/color-picker">
             <ColorPicker />
+          </Route>
+          <Route path="/img-to-base64">
+            <ImgBase64Encoder />
           </Route>
         </Switch>
       </main>
