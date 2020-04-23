@@ -19,10 +19,9 @@ const UrlEncoder = () => {
   }
 
   // Copies the encoded url to user clipboard
-  function handleCopy(e) {
+  function handleCopy() {
     textAreaRef.current.select();
     document.execCommand("copy");
-    e.target.focus();
     setUrlCopied(true);
   }
 
