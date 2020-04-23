@@ -49,7 +49,7 @@ const ImgBase64Encoder = () => {
                 Copy
               </button>
               <button onClick={handleCopyAsImgTag} type="button" className="text-center border rounded block mx-auto text-white px-2 py-3 bg-purple-700 hover:bg-purple-800 ml-2">
-                Copy as img tag
+                Copy as &lt;img&gt; tag
               </button>
             </div>
           </div>
