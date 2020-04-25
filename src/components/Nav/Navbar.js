@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import Navlink from "./NavLink";
 
 const Navbar = () => {
@@ -16,10 +17,10 @@ const Navbar = () => {
 
   return (
     <nav className="flex items-center justify-between flex-wrap bg-white p-8 shadow border-gray-500">
-      <div className="flex items-center flex-shrink-0 text-purple-900 mr-6">
+      <Link to="/" className="flex items-center flex-shrink-0 text-purple-900 mr-6">
         <img src="./logo.png" alt="logo" className="w-6 mr-3" />
         <span className="font-semibold text-2xl tracking-tight">Converto</span>
-      </div>
+      </Link>
       <div className="block lg:hidden">
         <button onClick={() => setOpen(!open)} className="flex items-center px-2 py-2 border rounded text-purple-700 border-purple-700 hover:text-purple-900 hover:border-purple-900" type="button">
           {
