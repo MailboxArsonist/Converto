@@ -30,7 +30,7 @@ Button.propTypes = {
 
 Button.defaultProps = {
   id: "",
-  className: "",
+  className: "text-center border rounded block mx-auto text-white px-2 py-3 bg-purple-700 hover:bg-purple-800 ml-2",
   handleClick: () => false,
 };
 
