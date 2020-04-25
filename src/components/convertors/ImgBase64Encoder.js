@@ -1,17 +1,17 @@
 import React, { useState, useRef } from "react";
 import Input from "../Input";
+import Button from "../Button";
 
 const ImgBase64Encoder = () => {
   const [img, changeImg] = useState();
-  const encodedImgRef = useRef(null);
   const [urlCopied, setUrlCopied] = useState(false);
+  const [urlImgCopied, setUrlImgCopied] = useState(false);
+  const encodedImgRef = useRef(null);
 
   function uploadImage(e) {
     const reader = new FileReader();
     const file = e.target.files[0];
-
     reader.onloadend = () => (changeImg(reader.result));
-
     reader.readAsDataURL(file);
   }
 
@@ -31,6 +31,7 @@ const ImgBase64Encoder = () => {
     input.select();
     document.execCommand("copy");
     document.body.removeChild(input);
+    setUrlImgCopied(true);
   }
 
   return (
@@ -45,12 +46,12 @@ const ImgBase64Encoder = () => {
           <div className="flex flex-col items-center justify-center ml-4">
             <Input refProp={encodedImgRef} className="border rounded shadow p-2 w-full mb-3" value={img} readonly />
             <div className="flex items-center justify-between">
-              <button onClick={handleCopy} type="button" className="text-center border rounded block mx-auto text-white px-2 py-3 bg-purple-700 hover:bg-purple-800">
-                Copy
-              </button>
-              <button onClick={handleCopyAsImgTag} type="button" className="text-center border rounded block mx-auto text-white px-2 py-3 bg-purple-700 hover:bg-purple-800 ml-2">
-                Copy as &lt;img&gt; tag
-              </button>
+              <Button handleClick={handleCopy}>
+                {urlCopied ? "Copied" : "Copy"}
+              </Button>
+              <Button handleClick={handleCopyAsImgTag}>
+                {urlImgCopied ? "Copied as <img> tag" : "Copy as <img> tag"}
+              </Button>
             </div>
           </div>
         </div>
