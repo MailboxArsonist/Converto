@@ -1,4 +1,5 @@
 import React, { useState, useRef } from "react";
+import Button from "../Button";
 
 const UrlDecoder = () => {
   // Use state
@@ -35,7 +36,7 @@ const UrlDecoder = () => {
       <textarea value={urlInput} onChange={(e) => handleInput(e.target.value)} className="mx-auto border shadow rounded block w-5/6 md:w-1/2 mb-10 p-3" placeholder="URL goes here..." name="url-input" id="url-input" cols="30" rows="8" />
       <textarea ref={textAreaRef} value={decodedUrl} className="mx-auto border shadow rounded block w-5/6 md:w-1/2 p-3 mb-4" placeholder="Et voila, now it's decoded!" name="url-output" id="url-output" cols="30" rows="8" readOnly />
 
-      <button onClick={handleCopy} type="button" className="w-5/6 md:w-1/2 text-center border rounded block mx-auto text-white px-2 py-3 bg-purple-700 hover:bg-purple-800">
+      <Button handleClick={handleCopy} className="w-5/6 md:w-1/2 text-center border rounded block mx-auto text-white px-2 py-3 bg-purple-700 hover:bg-purple-800">
         {/* If url has been copied display success message */}
         {
           urlCopied
@@ -49,7 +50,7 @@ const UrlDecoder = () => {
             )
             : "Copy Decoded URL"
         }
-      </button>
+      </Button>
     </>
   );
 };
