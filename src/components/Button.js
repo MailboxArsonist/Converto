@@ -6,7 +6,7 @@ const Button = (props) => {
     id,
     className,
     handleClick,
-    text,
+    children,
   } = props;
 
   return (
@@ -16,22 +16,21 @@ const Button = (props) => {
       className={className}
       onClick={(e) => handleClick(e)}
     >
-      {text}
+      {children}
     </button>
   );
 };
 
 Button.propTypes = {
   id: PropTypes.string,
-  text: PropTypes.string,
   className: PropTypes.string,
   handleClick: PropTypes.func,
+  children: PropTypes.node.isRequired,
 };
 
 Button.defaultProps = {
   id: "",
   className: "",
-  text: "",
   handleClick: () => false,
 };
 
