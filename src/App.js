@@ -6,6 +6,7 @@ import {
 } from "react-router-dom";
 
 import Navbar from "./components/Nav/Navbar";
+import Home from "./components/Home";
 import UrlEncoder from "./components/convertors/UrlEncoder";
 import UrlDecoder from "./components/convertors/UrlDecoder";
 import ColorConvertor from "./components/convertors/ColorConvertor";
@@ -19,6 +20,9 @@ function App() {
       <Navbar />
       <main className="container mx-auto my-12">
         <Switch>
+          <Route path="/">
+            <Home />
+          </Route>
           <Route path="/url-encoder">
             <UrlEncoder />
           </Route>
